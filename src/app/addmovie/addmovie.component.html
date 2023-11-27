@@ -1,0 +1,73 @@
+<div class="container" style="padding-top: 10px;">
+  <a href="#" routerLink="/adminDashboard" style=" margin:2%;"class="btn btn-success">Back</a>
+
+    <form [formGroup]="addMovieForm" (ngSubmit)="onSubmit()" class="movie-form">
+      <h2><strong>Add Movie Details</strong></h2>
+      <div class="form-group">
+        <label for="Location">Location:</label>
+        <input type="text" class="form-control" id="Location" formControlName="Location" required>
+      </div>
+      <div class="form-group">
+        <label for="Theatrename">Theatre Name:</label>
+        <input type="text" class="form-control" id="Theatrename" formControlName="Theatrename" required>
+      </div>
+      <div class="form-group">
+        <label for="Moviename">Movie Name:</label>
+        <input type="text" class="form-control" id="Moviename" formControlName="Moviename" required>
+      </div>
+      <div class="form-group">
+        <label for="MovieLink">Movie Link:</label>
+        <input type="text" class="form-control" id="MovieLink" formControlName="MovieLink">
+      </div>
+      <div class="form-group">
+        <label for="synopsis">Synopsis:</label>
+        <textarea class="form-control" id="synopsis" formControlName="synopsis"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="Genre">Genre:</label>
+        <input type="text" class="form-control" id="Genre" formControlName="Genre">
+      </div>
+      <div class="form-group">
+        <label for="trailer">Trailer:</label>
+        <input type="text" class="form-control" id="trailer" formControlName="trailer">
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input type="number" class="form-control" id="rating" formControlName="rating">
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration:</label>
+        <input type="text" class="form-control" id="duration" formControlName="duration">
+      </div>
+      <div class="form-group">
+        <label for="heroname">Hero Name:</label>
+        <input type="text" class="form-control" id="heroname" formControlName="heroname">
+      </div>
+      <div class="form-group">
+        <label for="heroimg">Hero Image:</label>
+        <input type="text" class="form-control" id="heroimg" formControlName="heroimg">
+      </div>
+      <div class="form-group">
+        <label for="heroinename">Heroine Name:</label>
+        <input type="text" class="form-control" id="heroinename" formControlName="heroinename">
+      </div>
+      <div class="form-group">
+        <label for="heroineimg">Heroine Image:</label>
+        <input type="text" class="form-control" id="heroineimg" formControlName="heroineimg">
+      </div>
+      <div class="form-group">
+        <label for="charges">Charges:</label>
+        <input type="number" class="form-control" id="charges" formControlName="charges">
+      </div>
+      <div class="form-group">
+        <label for="Date">Date:</label>
+        <input type="date" class="form-control" id="Date" formControlName="Date" required>
+      </div>
+      <div class="form-group">
+        <label for="screening">Screening:</label>
+        <input type="text" class="form-control" id="screening" formControlName="screening" required>
+      </div>
+      <button type="submit" class="btn btn-primary"  [disabled]="!addMovieForm.valid">Submit</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,55 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://thumbs.dreamstime.com/b/cinema-background-concept-movie-theater-object-isolated-white-vector-illustration-205993805.jpg"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <div class="login-card" style="background-color: rgb(243, 233, 233);
+        box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+          <img class="profile-img-card" src="assets/img/logologin.png" />
+          <p class="profile-name-card"></p>
+          <form [formGroup]="loginForm" class="form-signin">
+            <span class="reauth-email"></span>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              required
+              placeholder="Email address"
+              autofocus
+              formControlName="email"
+            />
+            <div *ngIf="loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+              Email is required.
+            </div>
+            <div *ngIf="loginForm.get('email')?.hasError('email') && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+              Invalid email format.
+            </div>
+            <br>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              required
+              placeholder="Password"
+              formControlName="password"
+            />
+            <div *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+              Password is required.
+            </div>
+            <br>
+            <button
+              class="btn btn-primary btn-block btn-lg btn-signin"
+              (click)="Login()"
+            >
+              Sign in
+            </button>
+          </form><br>
+          <a class="forgot-password" routerLink="/signup">New User ?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

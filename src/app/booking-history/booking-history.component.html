@@ -1,0 +1,57 @@
+<!-- <div class="container">
+  <h2>Booking History</h2>
+
+  <ng-container *ngIf="tickets.length > 0; else noBookings">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>movieId</th>
+          <th>Movie</th>
+          <th>Number of Tickets</th>
+          <th>Seat Numbers</th>
+          <th>Slot</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of tickets">
+          <td>{{booking.movieId}}</td>
+          <td>{{ booking.movieDetails?.moviename }}</td>
+          <td>{{ booking.ticketQuantity }}</td>
+          <td>{{booking.seatnum}}</td>
+          <td>{{ booking.slot }}</td>
+          <td>{{ booking.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #noBookings>
+    <p>No booking history found</p>
+  </ng-template>
+</div> -->
+
+<div class="container">
+  <h2 style="padding-top: 20px;"> My Bookings</h2><br>
+  <ng-container *ngIf="tickets.length > 0; else noBookings">
+    <div class="booking-container">
+      <div class="booking-box" *ngFor="let booking of tickets">
+        <div class="booking-details">
+          <h4>{{ booking.movieDetails?.moviename }}</h4><hr>
+          <p><strong>Number of Tickets:</strong> {{ booking.ticketQuantity }}</p>
+          <p><strong>Seat Numbers:</strong> {{ booking.seatnum }}</p>
+          <p><strong>Slot:</strong> {{ booking.slot }}</p>
+          <p><strong>Date:</strong> {{ booking.date | date:'EEE, MMM dd yyyy' }}</p>
+          <button *ngIf="isDateBeforeCurrent(booking.date)" class="btn btn-danger">Ticket Invalid</button>
+
+        </div>
+        <div class="booking-image-container">
+          <img [src]="booking.movieDetails?.movieLink" alt="{{ booking.movieDetails?.moviename }}" class="booking-image" />
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noBookings>
+    <p>No booking history found</p>
+  </ng-template>
+</div>
+

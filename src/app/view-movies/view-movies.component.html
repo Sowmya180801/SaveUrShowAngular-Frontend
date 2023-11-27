@@ -1,0 +1,98 @@
+<h3
+  class="text-center my-5 movies_title"
+  style="background-color: #969696; text-shadow: 2px; padding: 1%; margin: 30%"
+>
+  <i>List of Movies Availabe to Book😍</i>
+</h3>
+
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <form
+      [formGroup]="searchForm"
+      (ngSubmit)="searchMovies()"
+      [(ngModel)]="search"
+      class="custom-form"
+    >
+      <div class="input-group">
+        <input
+          class="form-control"
+          id="inputdefault"
+          type="text"
+          formControlName="search"
+          placeholder="Search by movie name"
+        />
+        <button class="but" type="submit" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+    </form>
+    <form
+      [formGroup]="searchForm"
+      (ngSubmit)="searchLocation()"
+      class="custom-form"
+    >
+      <div class="input-group">
+        <input
+          class="form-control"
+          id="inputlocation"
+          type="text"
+          formControlName="location"
+          placeholder="Search by location"
+        />
+        <button class="but" type="submit" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+    </form>
+    <div class="form-group">
+      <div class="sort-container">
+        <label class="sort-label"><strong>Sort by Rating</strong></label>
+        <select
+          [(ngModel)]="selectedSortOption"
+          (change)="sortMovies()"
+          class="sort-select"
+        >
+          <option value="Rating (High to Low)">Rating (High to Low)</option>
+          <option value="Rating (Low to High)">Rating (Low to High)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let movie of sortedMovies">
+      <div *ngIf="movie.screening === 'Yes'" class="card mb-4">
+        <img
+          class="card-img-top"
+          src="{{ movie.movieLink }}"
+          alt="Card image cap"
+          style="width: 100%; height: 350px"
+        />
+        <div class="card-body">
+          <h4 class="card-title" style="font-size: medium">
+            {{ movie.moviename }}
+          </h4>
+          <p class="card-text" style="font-size: small">
+            {{ movie.location }}, {{ movie.charges }}/-
+          </p>
+          <p class="card-text">
+            <img
+              src="https://pngimg.com/uploads/red_star/red_star_PNG31.png"
+              style="width: 16px; height: 16px"
+            />
+            {{ movie.rating }}/5.0
+          </p>
+          <a href="#"
+            [routerLink]="['/singleView/', movie.movieId, 'view']"
+            class="btn btn-info"
+            >View</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}

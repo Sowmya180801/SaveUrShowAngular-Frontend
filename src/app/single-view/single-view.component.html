@@ -1,0 +1,50 @@
+ <div class="container">
+    <br>
+    <div class="movie-details-container" >
+        <div class="movie-image">
+          <img [src]="data.movieLink"  style="height:80%; width: 80%;"alt="Movie Poster">
+        </div>
+      
+        <div class="movie-info">
+          <h1>{{ data.moviename}} </h1>  
+          <h3 class="sm"> {{ data.theatrename}}</h3>  <p class="sm">City : {{ data.location }}</p>
+          <p class="ss"> <img src="https://pngimg.com/uploads/red_star/red_star_PNG31.png" style="width: 25px; height: 25px;"> {{data.rating}}/5.0 </p>
+          <p class="ss">{{data.duration}}<strong> . </strong> {{ data.genre }} <strong> .</strong> UA <strong> .</strong> {{ data.date | date:'dd MMM, yyyy'}}
+          </p>   
+
+          <p class="sm">Ticket charge per one Ticket : {{ data.charges}}</p>
+          <a class="btn btn-danger" href="#" [routerLink]="['/booking/', data.movieId, 'view']"  role="button">Book Tickets</a>
+          <!-- <a class="btn btn-danger" href="#" (click)="bookTickets()" role="button">Book Tickets</a> -->
+          <br>
+        </div>
+      </div>
+      <br>
+      <h4>About of the movie</h4>
+      <h6 class="sm">{{data.synopsis}}</h6> 
+      <hr>
+      <h4>Cast</h4>      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img [src]="data.heroimg" class="rounded-circle shadow-4-strong" alt="hero" style="height:80%; width: 40%;" alt="Movie Poster">
+            <h5>{{ data.heroname }}</h5>
+          </div>
+          <div class="col-md-3">
+            <img [src]="data.heroineimg" class="rounded-circle shadow-4-strong" alt="heroine" style="height:80%; width: 40%;" alt="Movie Poster">
+            <h5>{{ data.heroinename }}</h5>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <!-- <iframe width="560" height="315" [src]="'https://www.youtube.com/embed/' + getVideoId(data.trailer)" frameborder="0" allowfullscreen></iframe>       -->
+      <br>
+      <div class="d-flex justify-content-center">
+        <a href="#" routerLink="/viewMovies" class="btn btn-info">View More Movies to BookTicket</a>
+    </div>
+</div> 
+
+
+
+

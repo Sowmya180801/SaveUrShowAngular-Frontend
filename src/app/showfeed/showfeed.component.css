@@ -1,0 +1,29 @@
+.container {
+    margin-top: 10px;
+  }
+  
+  .table {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .table th {
+    text-align: center;
+    background-color: rgb(96, 182, 236);
+  }
+
+  .table td {
+    text-align: center;
+  }
+  
+  .star-rating {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .star-rating img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  

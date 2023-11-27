@@ -1,0 +1,144 @@
+<div class="d-flex justify-content-around">
+  <div class="col-md-9 col-lg-6 col-xl-5">
+    <img src="https://thumbs.dreamstime.com/b/cinema-background-concept-movie-theater-object-isolated-white-vector-illustration-205993805.jpg"
+      class="img-fluid" alt="Sample image">
+  </div>
+  <div class="col-md-9 col-lg-6 col-xl-5">
+<div class="register-card" style="background-color:rgb(243, 233, 233);;
+box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+  <img class="profile-img-card" src="assets/img/logologin.png" />
+  <p class="profile-name-card"></p>
+
+  <div class="alert alert-danger" *ngIf="duplicateUserError">
+    You are already a registered user. Please try to log in.
+  </div>
+  
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form-signup">
+    <span class="reauth-email"></span>
+    <div class="row">
+      <div class="col-sm-12">
+        <input
+          #Email
+          formControlName="username"
+          type="text"
+          class="form-control"
+          id="username"
+          required
+          placeholder="UserName"
+          autofocus
+        />
+        <div
+          *ngIf="f['username'].touched && f['username'].invalid">
+        <small>UserName is required!!</small> 
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <input
+          #Email
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          required
+          placeholder="Email address"
+          autofocus
+        />
+        <div *ngIf="f['email'].touched && f['email'].invalid">
+          <div *ngIf="f['email'].errors && f['email'].errors['required']">
+            <small>Email is Required!</small>
+          </div>
+          <div *ngIf="f['email'].errors && f['email'].errors['invalidEmail']">
+            <small>Invalid Email format</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <input
+          #PWD
+          formControlName="password"
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          required
+          placeholder="Password"
+        />
+        <div
+          *ngIf="f['password'].touched && f['password'].invalid"
+          
+        >
+          <div *ngIf="f['password'].errors && f['password'].errors['required']">
+            <small>Password is required.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <input
+          #PWD
+          formControlName="confirmpassword"
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          required
+          placeholder="Confirm Password"
+        />
+        <div
+          *ngIf="f['confirmpassword'].touched && f['confirmpassword'].invalid"
+          
+        >
+          <div
+            *ngIf="
+              f['confirmpassword'].errors &&
+              f['confirmpassword'].errors['required']
+            "
+          >
+           <small> Confirm Password is required.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-sm-12">
+        <input
+          #Email
+          formControlName="usertype"
+          type="text"
+          class="form-control"
+          id="usertype"
+          required
+          placeholder="usertype"
+          autofocus
+        />
+        <div
+          *ngIf="f['usertype'].touched && f['usertype'].invalid"
+         
+        >
+          <div *ngIf="f['usertype'].errors && f['usertype'].errors['required']">
+            <small>UserType is required.</small>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <button
+      class="btn btn-primary btn-block btn-lg btn-signup"
+      type="submit"
+      [disabled]="!form.valid">
+      Sign Up
+    </button>
+  </form>
+  <a class="forgot-password" routerLink="/login">Already a User ?</a>
+</div>
+</div>
+</div>
+

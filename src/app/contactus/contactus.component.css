@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+.contact-container {
+    margin-top: 5%;
+}
+
+.contact-form {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+}

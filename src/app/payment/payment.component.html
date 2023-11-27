@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-6">
+      <div class="card transaction-form">
+        <div class="card-body">
+          <h2 class="card-title">Enter Bank Card Details</h2>
+          <form (ngSubmit)="submitBankDetails()" #bankForm="ngForm">
+
+            <div class="form-group">
+              <label for="cardNumber" class="form-label">Card Number :</label>
+              <input type="text" id="cardNumber" name="cardNumber" [(ngModel)]="cardNumber" placeholder="Enter Card Number" class="form-control" required pattern="\d{16}">
+              <div *ngIf="bankForm.controls['cardNumber'].invalid && (bankForm.controls['cardNumber'].dirty || bankForm.controls['cardNumber'].touched)" class="alert alert-danger">
+                Card number is required and should be a sixteen-digit number.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ExpiryDate" class="form-label">Expiry Date :</label>
+              <input type="text" id="ExpiryDate" name="ExpiryDate" [(ngModel)]="ExpiryDate" placeholder="MM/YY" class="form-control"required pattern="(0[1-9]|1[0-2])\/(2[3-9]|1[0-9])">
+              <div *ngIf="bankForm.controls['ExpiryDate'].invalid && (bankForm.controls['ExpiryDate'].dirty || bankForm.controls['ExpiryDate'].touched)" class="alert alert-danger">
+                Expiry date is required and should be a future date.
+              </div>
+            </div> 
+            
+            <div class="form-group">
+              <label for="CVV" class="form-label">CVV</label>
+              <input type="number" id="CVV" name="CVV" [(ngModel)]="CVV" placeholder="CVV" class="form-control" required pattern="\d{3}">
+              <div *ngIf="bankForm.controls['CVV'].invalid && (bankForm.controls['CVV'].dirty || bankForm.controls['CVV'].touched)" class="alert alert-danger">
+                CVV is required and should be 3 digits.
+              </div>
+            </div>
+
+            <h4>Total Cost: $ {{ totalCost }}</h4>
+
+            <button type="submit" class="btn btn-primary" (click)="booking()" [disabled]="bankForm.invalid || !bankForm.dirty" routerLink="/success">Submit</button>
+          </form>
+          <div *ngIf="showSuccessMessage" class="success-message">
+            Transaction is successful!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

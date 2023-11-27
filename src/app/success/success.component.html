@@ -1,0 +1,97 @@
+<div class="text-center" style="padding-top: 2%; padding-bottom: 0%">
+  <a href="#" [routerLink]="['/viewMovies']" class="btn btn-info">View all movies</a>
+</div>
+<div class="container">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height: 75vh;">
+    <div class="col-md-8">
+      <div class="card" style=" background-color: #dee6ea; ">
+        <div class="card-body">
+          <h3 class="card-title text-center">Booking Successful!</h3>
+          <hr />
+          <div class="row">
+            <div class="col-md-3">
+              <img
+                [src]="bookingDetails.movieLink"
+                style="height: 100%; width: 100%"
+                alt="Movie Poster"
+              />
+            </div>
+            <div class="col-md-5">
+              <h3>{{ bookingDetails.movieName }}</h3>
+              <p>Number of Tickets: {{ bookingDetails.ticketQuantity }}</p>
+              <p>Seat Numbers: {{ bookingDetails.seatnum }}</p>
+              <p>
+                Date:
+                {{ bookingDetails.date | date : "EEE MMM dd yyyy HH:mm:ss" }}
+              </p>
+              <p>Slot: {{ getSlotTime(bookingDetails.slot) }}</p>
+              <p>Theatre : {{ bookingDetails.theatrename }}</p>
+              <p>Location: {{ bookingDetails.location }}</p>
+            </div>
+            <div class="col-md-4">
+              <div class="text-right mt-3">
+                <img
+                  style="padding-top: 10%"
+                  src="https://th.bing.com/th/id/OIP.-9N4K3Syg-OgbET8dgDwqAHaHa?pid=ImgDet&rs=1"
+                  style="height: 75%; width: 75%;"
+                />
+              </div>
+
+              <strong
+                ><h5 class="text-right mt-4">
+                  Total Cost: $ {{ bookingDetails.totalCost }}
+                </h5></strong
+              >
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="text-center mt-3">
+                <button class="btn btn-info" (click)="downloadPDF()">
+                  Download PDF
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <form [formGroup]="form" action="javascript:void(0);" (submit)="send()">
+                <div class="text-center mt-3">
+                  <button type="submit" class="btn btn-info">Email</button>
+                </div>
+              </form>
+            </div>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<div class="container">
+  <h4 style="color: #333">Booking Successful email</h4>
+  <div class="formbold-main-wrapper">
+    <div class="order-confirmation-container">
+      <form [formGroup]="form" action="javascript:void(0);" (submit)="send()">
+        <div class="formbold-mb-5">
+          <label for="email" class="formbold-form-label">Email Id</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            [value]="email"
+            placeholder="Enter your email id"
+            class="form-bold-input"
+          />
+        </div>
+  
+        <div>
+          <button  type="submit" class="formbold-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->

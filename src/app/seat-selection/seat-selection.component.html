@@ -1,0 +1,18 @@
+  <div class="seat-box">
+    <ng-container *ngFor="let row of seatGrid; let rowIndex = index">
+    <ng-container *ngFor="let seatNumber of row; let colIndex = index">
+    <div class="seat">
+    <div
+              [ngClass]="{
+                'booked-seat': isSeatBooked(seatNumber),
+                'selected-seat': isSeatSelected(seatNumber),
+                'available-seat': isSeatAvailable(seatNumber)
+              }"
+              (click)="toggleSeat(seatNumber)"
+    >
+              {{ rowIndex * totalCols + colIndex + 1 }}
+    </div>
+    </div>
+    </ng-container>
+    </ng-container>
+    </div>

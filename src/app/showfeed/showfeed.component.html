@@ -1,0 +1,25 @@
+<div class="container">
+    <a href="#" routerLink="/viewMovies" class="btn btn-primary btn-custom">View Movies</a>
+      <h2 class="text-center my-5 items_title">Users Feedback</h2>
+  
+  <table class="table table-striped ">
+      <thead>
+        <tr>
+        <th scope="col">MovieName</th>
+          <th scope="col">Review</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of feedbacks">
+          <td>{{user.moviename}}</td>
+          <td>{{ user.review }}</td>
+          <td>
+            <span class="star-rating"><img src="https://pngimg.com/uploads/red_star/red_star_PNG31.png" style="width: 20px; height: 20px;"> {{ user.rating }}/5</span>
+          </td>
+        </tr>
+      </tbody>
+      
+  </table>
+  </div>

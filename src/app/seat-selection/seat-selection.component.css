@@ -1,0 +1,32 @@
+.seat-box {
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* 10 columns each 40px wide */
+  grid-template-rows: repeat(10, 40px); /* 10 rows each 40px high */
+  gap: 5px; /* Adjust gap between seats */
+  padding: 5px; /* Add some padding around the grid */
+}
+ 
+.seat {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc; /* Border around each seat */
+  cursor: pointer;
+  background-color: #f2f5ef;
+  border-radius: 8px;
+}
+ 
+.booked-seat {
+  background-color: #f55a3e; 
+
+}
+ 
+.selected-seat {
+  background-color: #178b21; 
+}
+ 
+.available-seat {
+  background-color: #f2f5ef;
+}

@@ -1,0 +1,63 @@
+<h3 class="text-center my-5 booking_title">My  Bookings</h3>
+
+<div class="container">
+    <div class="card movies_card">
+        <div class="card-body">
+            <table class="table table-striped text-center">
+                <thead class="thead-dark">
+                <tr>
+                    <th></th>
+                <th>BookId</th>
+                <th>SeatNum</th>
+                <th>MovieId</th>
+                <th>UserId</th>
+                <th>Slot</th>
+                <th>Booked Date</th>
+                </tr>
+                </thead>
+                <tr >
+                    <td></td>
+                <td>{{ ticket.bookid }}</td>
+                <td>{{ ticket.seatnum }}</td>
+                <td>{{ ticket.movieId }}</td>
+                <td>{{ ticket.userid }}</td>
+                <td>{{ticket.slot}}</td>
+                <td>{{ ticket.date | date:'MMM dd, yyyy' }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- <h3 class="text-center my-5 booking_title">My Booking History</h3>
+
+<div class="container">
+  <div *ngIf="tickets && tickets.length > 0" class="card movies_card">
+    <div class="card-body">
+      <table class="table table-striped text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th>BookId</th>
+            <th>SeatNum</th>
+            <th>MovieId</th>
+            <th>UserId</th>
+            <th>Slot</th>
+            <th>Booked Date</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let ticket of tickets">
+          <td>{{ ticket.bookid }}</td>
+          <td>{{ ticket.seatnum }}</td>
+          <td>{{ ticket.movieId }}</td>
+          <td>{{ ticket.userid }}</td>
+          <td>{{ ticket.slot }}</td>
+          <td>{{ ticket.date | date:'MMM dd, yyyy HH:mm:ss' }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="!tickets || tickets.length === 0" class="alert alert-info">
+    No booking history found.
+  </div>
+</div> -->

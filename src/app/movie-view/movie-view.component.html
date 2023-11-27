@@ -1,0 +1,84 @@
+<div style="padding-top: 20px;
+padding-left:10%;">    <a href="#" routerLink="/movieIndex" class="btn btn-primary">Back</a></div>
+<div class="container">
+    <h3 style="text-align: center;">View Movie details</h3><br> 
+    <!-- <div>
+        <strong>MovieId:</strong>
+        <p>{{ data.movieId }}</p>
+    </div>
+   
+    <div>
+        <strong>Location:</strong>
+        <p>{{ data.location }}</p>
+    </div>
+   
+    <div>
+        <strong>Theatrename:</strong>
+        <p>{{ data.theatrename}}</p>
+    </div>
+
+    <div>
+        <strong>Moviename:</strong>
+        <p>{{ data.moviename}}</p>
+    </div>
+   
+    <div>
+        <strong>Movie Image:</strong>
+        <br>
+        <img src="{{ data.movieLink}}" style="height: 20%; width: 20%;">
+    </div>
+   
+    <div>
+        <strong>Charges:</strong>
+        <p>{{ data.charges}}</p>
+    </div>
+   
+    <div>
+        <strong>Released Date:</strong>
+        <p>{{ data.date |  date:'dd-MM-yyyy'}}</p>
+    </div> -->
+    <div style="display: flex;">
+
+        <div style="flex: 1;">
+            <div>
+               
+                <img src="{{ data.movieLink }}" style="height: 100%; width: 100%; padding-right: 30%;">
+            </div>
+        </div>
+    
+        <div style="flex: 2; padding-left: 40px;">
+            <div>
+               
+                <p> <strong>MovieId:</strong>{{ data.movieId }}</p>
+            </div>
+    
+            <div>
+               
+                <p> <strong>Location:</strong>{{ data.location }}</p>
+            </div>
+    
+            <div>
+                
+                <p><strong>Theatrename:</strong>{{ data.theatrename}}</p>
+            </div>
+    
+            <div>
+                
+                <p><strong>Moviename:</strong>{{ data.moviename}}</p>
+            </div>
+    
+            <div>
+                
+                <p><strong>Charges:</strong>{{ data.charges}}</p>
+            </div>
+    
+            <div>
+                
+                <p><strong>Released Date:</strong>{{ data.date | date:'dd-MM-yyyy'}}</p>
+            </div>
+        </div>
+    
+    </div>
+    
+   
+</div>

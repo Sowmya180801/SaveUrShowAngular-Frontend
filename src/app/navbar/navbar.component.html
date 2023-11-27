@@ -1,0 +1,70 @@
+
+ <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+  <div class="container-fluid">
+    <!-- <img src="/assets/img/saveurshowlogo.png" alt="Logo" width="40" height="40"> -->
+    <a class="navbar-brand" routerLink="">SaveUrShow</a>
+    <button
+      data-toggle="collapse"
+      data-target="#navcol-1"
+      class="navbar-toggler"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <ul class="nav navbar-nav">
+      
+        <li [hidden]="IsLoggedIn" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login/Signup
+          </a>
+          <div class="dropdown-menu" aria-labelledby="authDropdown">
+            <a class="dropdown-item" routerLink="/login">Login</a>
+            <a class="dropdown-item" routerLink="/signup">Signup</a>
+          </div>
+        </li>
+
+        
+        <li  *ngIf="IsLoggedIn && !IsAdmin" class="nav-item">
+          <a class="nav-link active" routerLink="/customerDashboard">Dashboard</a>  
+        </li>
+        <li  *ngIf="IsLoggedIn && !IsCustomer" class="nav-item">
+          <a class="nav-link active" routerLink="/adminDashboard">Dashboard</a>  
+        </li> 
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About/Contact/Feedback
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/aboutus"><img src="https://th.bing.com/th/id/OIP.QCKvcAHEzLangzC9MULBjwHaHa?rs=1&pid=ImgDetMain" style="width:22px; height:22px;"> AboutUs</a>
+            <a class="dropdown-item" routerLink="/contactus"><img src="https://th.bing.com/th/id/R.aa687107de7ff1e807062752b846f036?rik=VgVYRrGe0pIDIA&riu=http%3a%2f%2ftalktotrevor.co.za%2fwp-content%2fuploads%2f2015%2f11%2fContact-Us-PNG.png&ehk=19d8BZyg13oJSF7Pgx2ynIQ4Hvy96JQvm3LXoOAQc%2bE%3d&risl=&pid=ImgRaw&r=0" 
+              style="height: 22px; width:22px;"> ContactUs</a>
+            <a class="dropdown-item" routerLink="/createfeed"><img src="https://th.bing.com/th/id/OIP.Y_Kz1BB2geejSHnWQFBb7QAAAA?rs=1&pid=ImgDetMain" style="height: 22px; width:22px;"> Feedback</a>
+          </div>
+        </li>  
+        <li [hidden]="!IsLoggedIn" class="nav-item dropdown">
+
+          <!-- {{template-expression}} ---- doubly curly braces -->
+
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hi, {{username}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+            <a class="dropdown-item" routerLink="/viewProfile/{{id}}"><img src="https://freesvg.org/img/abstract-user-flat-3.png" style="height:18%; width:18%;"> Profile</a>
+            <a class="dropdown-item" routerLink="/booking-history/{{id}}"> <img src="https://th.bing.com/th/id/OIP.Inaud4lwFvdQLI99zNVVtwAAAA?rs=1&pid=ImgDetMain" style="height:18%; width:18%;"> My Bookings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="Logout()"><img src="https://static.vecteezy.com/system/resources/previews/000/574/782/original/vector-logout-sign-icon.jpg" style="height:20%; width:20%;"> Logout</a>
+
+          </div>
+        </li> 
+      </ul>		  
+    </div>
+    
+  </div>
+</nav> 

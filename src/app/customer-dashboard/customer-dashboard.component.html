@@ -1,0 +1,60 @@
+<h2 class="text-center my-5 customer_dashboard_title">Welcome to the Dashboard, {{username}} </h2>
+
+<div class="container-fluid">
+  <div class="row justify-content-around" style="margin: 5%">
+    <div class="col-4" >
+      <div class="card customer_dashboard_card" >
+        <a routerLink="/showfeed" class="view_movies_link">
+          <div class="grid text-center" style="margin-right: 0%cd l">
+            <img
+              src="https://th.bing.com/th/id/R.a13e59363673f8d7574a8d14bed4c805?rik=8KYjrunFCxhB1A&riu=http%3a%2f%2fd2u4q3iydaupsp.cloudfront.net%2f9YxSrt2gA0ye66ikAAjpSgJ4YCtFcD1uj8hDAXedf3SsYrBTfDoHo3JiXVOhZ2xfaf7KQa3XGYsrwa3qUrgBcobfnJJpZlV3fF2A8W1ijmiNB1b4kyh4BahN4RgLC3SL&ehk=Rat9nC5AsfzC36PHz2rnLZUOTiALnSeLn7PlJJLOqkY%3d&risl=&pid=ImgRaw&r=0"
+              class="customer_dashboard_img"
+              alt=""
+            />
+            <h5 class="text-center my-3">Users feedbacks</h5>
+            <p class="text-muted text-center">
+              Here u can view all movies feedbacks provided by users..
+            </p>
+            <br>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-4" >
+      <div class="card customer_dashboard_card" >
+        <a routerLink="/viewMovies" class="view_movies_link">
+          <div class="grid text-center" style="margin-right: 0%cd l">
+            <img
+              src="../../assets/img/download.png"
+              class="customer_dashboard_img"
+              alt=""
+            />
+            <h5 class="text-center my-3">Availabe Movies to Book</h5>
+            <p class="text-muted text-center">
+              Here u can book available movies..
+            </p>
+            <h6><Strong>Book Ticket</Strong></h6>
+            <br>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card customer_dashboard_card" >
+        <a [routerLink]="['/booking-history/', userid]" class="view_movies_link">
+        <div class="grid text-center" style="margin-right: 0%cd l">
+          <img
+            src="../../assets/img/logo6.png"
+            class="customer_dashboard_img"
+            alt=""
+          />
+          <h5 class="text-center my-3">View Your Bookings Here</h5>
+          <p class="text-muted text-center">
+            Here you can view your bookings done in the past.
+          </p><br>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

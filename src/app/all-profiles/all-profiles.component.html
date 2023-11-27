@@ -1,0 +1,29 @@
+<div class="container">    
+    <a href="#" routerLink="/adminDashboard" style=" margin:2%;"class="btn btn-success">Back</a>
+    <h1 style="margin: 2%;">All User Profiles</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+              <tr>
+                <th></th>
+                <th>UserId</th>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>Password  <img (click)="togglePasswordVisibility()"
+                  src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_password-512.png"
+                  alt="Password Toggle"
+                  [ngClass]="{'show-password-icon': showPassword, 'hide-password-icon': !showPassword}"
+                /></th>
+                <th></th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let post of users">
+                <td></td>
+                <td>{{ post.userid }}</td>
+                <td>{{ post.username }}</td>
+                <td>{{ post.email }}</td>
+                <td>{{ showPassword ? post.password : '*********' }}</td>
+              </tr>
+        </tbody>
+    </table>
+ </div>

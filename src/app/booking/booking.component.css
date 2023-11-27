@@ -1,0 +1,99 @@
+.container {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .btn-secondary {
+    padding: 6px 12px;
+  }
+  
+  small {
+    color: #777;
+  }
+  
+  select.form-control {
+    width: 100%;
+  }
+  
+  p {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .movie-image {
+    flex: 1; 
+    padding: 16px; 
+  }
+  .row {
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    padding: 8px;
+  }
+
+  .trapezium {
+    margin-top: 8px;
+    width: 440px;
+    height: 34px;
+    background-color: #d3e9f8;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  }
+
+  .contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Available-box{
+    width: 20px; 
+    height: 20px; 
+    background-color: #f2f5ef;
+    border-radius: 4px;
+  }
+
+  .Booked-box{
+    width: 20px; 
+    height: 20px;
+    background-color: #f55a3e;  
+    border-radius: 4px;
+  }
+
+  .Selected-box{
+    width: 20px; 
+    height: 20px;
+    background-color: #178b21; 
+    border-radius: 4px;
+  }  
+
+  .con {
+    display: flex;
+  }
+  
+  .Available-box,
+  .Booked-box,
+  .Selected-box {
+    margin-top: 8px;
+    margin-left: 50px; 
+    margin-right: 50px; /* Adjust the margin as needed */
+    text-align: center;
+    line-height: 90px; /* Center the text vertically */
+    border: 1px solid #000; /* Add border for visibility */
+  }

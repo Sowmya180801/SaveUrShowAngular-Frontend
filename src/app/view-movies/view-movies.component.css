@@ -1,0 +1,31 @@
+/* Center the form horizontally */
+.custom-form {
+    text-align: center;
+  }
+  
+  
+  .but{
+    padding: 20%;
+  }
+  
+.sort-container {
+  display: flex;
+  align-items: center;
+}
+
+.sort-label {
+  margin-right: 10px;
+}
+
+.sort-select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
