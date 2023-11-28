@@ -137,6 +137,14 @@ export class SuccessComponent implements OnInit {
     pdf.text(`Slot: ${this.getSlotTime(this.bookingDetails.slot)}`, detailsX, detailsY + 40);
     pdf.text(`Theatre: ${this.bookingDetails.theatrename}`, detailsX, detailsY + 50);
     pdf.text(`Location: ${this.bookingDetails.location}`, detailsX, detailsY + 60);
+
+    const qrImagePath = 'https://th.bing.com/th/id/OIP.-9N4K3Syg-OgbET8dgDwqAHaHa?pid=ImgDet&rs=1';
+
+    const qrCodeWidth = 60;
+  const qrCodeHeight = 60;
+
+  pdf.addImage(qrImagePath, 'JPEG', 105, 140, qrCodeWidth, qrCodeHeight);
+
     //this.qrCodeDataUrl = this.generateQRCode(this.bookingDetails);
     pdf.save('booking_details.pdf');
   }

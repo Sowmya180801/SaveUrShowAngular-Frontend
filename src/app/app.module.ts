@@ -38,6 +38,7 @@ import { CreatefeedComponent } from './createfeed/createfeed.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { SeatSelectionComponent } from './seat-selection/seat-selection.component';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { RouterModule } from '@angular/router';
     CreatefeedComponent,
     AddmovieComponent,
     SeatSelectionComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,31 +25,33 @@ import { CreatefeedComponent } from './createfeed/createfeed.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { SeatSelectionComponent } from './seat-selection/seat-selection.component';
 import { AuthGuard } from './auth.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: signupComponent },
-  {path:"customerDashboard",component:CustomerDashboardComponent},
-  {path:"adminDashboard",component:AdminDashboardComponent, },
-  {path:"viewMovies",component:ViewMoviesComponent},
-  {path:"viewProfile/:userid",component:ViewProfileComponent},
-  {path:"editProfile/:userid",component:EditProfileComponent},
-   {path:"userBookings/:userid",component:UserBookingsComponent},
-  {path:"movieIndex",component:MovieIndexComponent},
-  {path:"allBookings",component:AllBookingsComponent},
+  {path:"customerDashboard",component:CustomerDashboardComponent ,canActivate: [AuthGuard]},
+  {path:"adminDashboard",component:AdminDashboardComponent, canActivate: [AuthGuard] },
+  {path:"viewMovies",component:ViewMoviesComponent, canActivate: [AuthGuard]},
+  {path:"viewProfile/:userid",component:ViewProfileComponent, canActivate: [AuthGuard]},
+  {path:"editProfile/:userid",component:EditProfileComponent, canActivate: [AuthGuard]},
+   {path:"userBookings/:userid",component:UserBookingsComponent, canActivate: [AuthGuard]},
+  {path:"movieIndex",component:MovieIndexComponent, canActivate: [AuthGuard]},
+  {path:"allBookings",component:AllBookingsComponent, canActivate: [AuthGuard]},
   {path:"contactus",component:ContactusComponent},
   {path:"aboutus",component:AboutusComponent},
-  {path:"movieView/:movieId/view",component:MovieViewComponent},
-  {path:"singleView/:movieId/view",component:SingleViewComponent},
-  {path:"booking/:movieId/view",component:BookingComponent},
-  {path:"payment/:totalCost",component:PaymentComponent},
-  {path:"success",component:SuccessComponent},
-  {path: 'booking-history/:userid', component: BookingHistoryComponent },
-  {path:'AllProfiles',component:AllProfilesComponent},
+  {path:"movieView/:movieId/view",component:MovieViewComponent , canActivate: [AuthGuard]},
+  {path:"singleView/:movieId/view",component:SingleViewComponent, canActivate: [AuthGuard]},
+  {path:"booking/:movieId/view",component:BookingComponent, canActivate: [AuthGuard]},
+  {path:"payment/:totalCost",component:PaymentComponent, canActivate: [AuthGuard]},
+  {path:"success",component:SuccessComponent, canActivate: [AuthGuard]},
+  {path: 'booking-history/:userid', component: BookingHistoryComponent, canActivate: [AuthGuard] },
+  {path:'AllProfiles',component:AllProfilesComponent, canActivate: [AuthGuard]},
   {path:'showfeed',component:ShowfeedComponent},
   {path:'createfeed',component:CreatefeedComponent},
-  {path:'addmovie',component:AddmovieComponent},
-  {path: 'seatselection',component:SeatSelectionComponent}
+  {path:'addmovie',component:AddmovieComponent, canActivate: [AuthGuard]},
+  {path: 'seatselection',component:SeatSelectionComponent, canActivate: [AuthGuard]},
+  { path: '**', component: NotFoundComponent }, 
 ];
 
 @NgModule({
